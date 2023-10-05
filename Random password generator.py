@@ -8,30 +8,47 @@ class Password:
 
     def generate_password(self):
         print("password generator.exe")
+        tal_set = ""
+        tegn_set = ""
+        while True:
 
-        choice = input("Skal passworden indholde store eller små bogstaver?: ")
-        if choice == "store":
-            print("Du har valgt store bogstaver.")
-            bogstaver_set = self.bogstaver.upper()
-        elif choice == "små":
-            print("Du har valgt små bogstaver.")
-            bogstaver_set = self.bogstaver.lower()
-        else:
-            print("Ugyldigt valg. Bruger standardindstillinger.")
+            choice = input("Skal passworden indholde 'store', 'små' eller 'blandet' bogstaver?: ")
+            if choice == "store":
+                print("Du har valgt store bogstaver.")
+                bogstaver_set = self.bogstaver.upper()
+            elif choice == "små":
+                print("Du har valgt små bogstaver.")
+                bogstaver_set = self.bogstaver.lower()
+            elif choice == "blandet":
+                print("Du har valgt blandet bogstaver.")
+                bogstaver_set = self.bogstaver.lower() + self.bogstaver.upper()
+            else:
+                print("fejl")
+                continue
+            break
+        while True:
 
-        choice = input("Skal passworden indholde tal? ja eller nej: ")
-        if choice == "ja":
-            print("Du har valgt at passworden skal indholde tal")
-            tal_set = self.tal
-        if choice == "nej":
-            print("Du har valgt at den ikke skal indholde tal")
-
-        choice = input("Skal passworden indholde speciale tegn? ja eller nej: ")
-        if choice == "ja":
-            print("Du har valgt at passworden skal indholde speciale tegn")
-            tegn_set = self.tegn
-        if choice == "nej":
-            print("Du har valgt at passworden ikke skal indholde speciale tegn")
+            choice = input("Skal passworden indholde tal? 'ja' eller 'nej': ")
+            if choice == "ja":
+                print("Du har valgt at passworden skal indholde tal")
+                tal_set = self.tal
+            elif choice == "nej":
+                print("Du har valgt at den ikke skal indholde tal")
+            else:
+                print("fejl")
+                continue
+            break
+        while True:
+            choice = input("Skal passworden indholde speciale tegn? 'ja' eller 'nej': ")
+            if choice == "ja":
+                print("Du har valgt at passworden skal indholde speciale tegn")
+                tegn_set = self.tegn
+            elif choice == "nej":
+                print("Du har valgt at passworden ikke skal indholde speciale tegn")
+            else:
+                print("fejl")
+                continue
+            break
 
 
 
