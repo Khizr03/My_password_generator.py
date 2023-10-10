@@ -55,9 +55,6 @@ class Password:
         password = "".join(random.choice(bogstaver_set + tal_set + tegn_set) for i in range(self.password_længde))
         print(f"Dit genererede password er: {password}")
 
-# Create an instance of the Password class
 
 password_generator = Password()
-
-# Call the generate_password method
 password_generator.generate_password()
